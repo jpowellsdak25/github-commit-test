@@ -1,0 +1,361 @@
+<?xml version="1.0"?>
+<AlteryxDocument yxmdVer="2025.2" RunE2="T">
+  <Nodes>
+    <Node ToolID="3">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.TextInput.TextInput">
+        <Position x="54" y="54" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <NumRows value="2" />
+          <Fields>
+            <Field name="url" />
+          </Fields>
+          <Data>
+            <r>
+              <c>https://api.github.com/repos/apache/hop/issues?milestone=7&amp;state=closed&amp;page=1</c>
+            </r>
+            <r>
+              <c>https://api.github.com/repos/apache/hop/issues?milestone=7&amp;state=closed&amp;page=2</c>
+            </r>
+          </Data>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxTextInput" />
+    </Node>
+    <Node ToolID="14">
+      <GuiSettings>
+        <Position x="654" y="162" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Value name="Text Box (41)">https://api.github.com/</Value>
+          <Value name="RepoOwner">octocat</Value>
+          <Value name="GitHubRepo">Hello-World</Value>
+          <Value name="Accesstoken" />
+          <Value name="Branch">master</Value>
+          <Value name="Protected">False</Value>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <Dependencies>
+          <Implicit />
+        </Dependencies>
+      </Properties>
+      <EngineSettings Macro="GitHub Get Last Commit.yxmc" />
+    </Node>
+    <Node ToolID="18">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Transpose.Transpose">
+        <Position x="786" y="162" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <ErrorWarn>Warn</ErrorWarn>
+          <KeyFields>
+            <Field field="base URL" />
+          </KeyFields>
+          <DataFields>
+            <Field field="base URL" selected="False" />
+            <Field field="name" selected="True" />
+            <Field field="commit_commit_message" selected="True" />
+            <Field field="commit_commit_author_name" selected="True" />
+            <Field field="commit_commit_author_email" selected="True" />
+            <Field field="commit_commit_author_date" selected="True" />
+            <Field field="commit_commit_committer_name" selected="True" />
+            <Field field="commit_commit_committer_email" selected="True" />
+            <Field field="commit_commit_committer_date" selected="True" />
+            <Field field="protected" selected="True" />
+            <Field field="protection_enabled" selected="True" />
+            <Field field="protection_url" selected="True" />
+            <Field field="commit_sha" selected="True" />
+            <Field field="commit_commit_tree_sha" selected="True" />
+            <Field field="_links_html" selected="True" />
+            <Field field="_links_self" selected="True" />
+            <Field field="commit_url" selected="True" />
+            <Field field="*Unknown" selected="True" />
+          </DataFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxTranspose" />
+    </Node>
+    <Node ToolID="19">
+      <GuiSettings>
+        <Position x="630" y="318" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Value name="Disable">False</Value>
+          <Value name="BatchCommit">False</Value>
+          <Value name="FilePath">filename</Value>
+          <Value name="TargetPath">directory</Value>
+          <Value name="SelfCommit">True</Value>
+          <Value name="TargetDirectory">[Folder name]</Value>
+          <Value name="RepoOwner">jpowellsdak25</Value>
+          <Value name="GitHubRepo">github-commit-test</Value>
+          <Value name="Branch">main</Value>
+          <Value name="Protected">False</Value>
+          <Value name="CommitMessage">test commit tool</Value>
+          <Value name="BaseAddress">https://api.github.com/</Value>
+          <Value name="AccessToken">48F99C8E3F39B5451C56D8412F25DECA5F9087AC044E34DF75B9CB1E1A1D5F1889008DFBE127ED8F691A20868BFD1992CEEC5445BE4A15238449638D09555D2907B706C330437C56DC9030A8E2E20C5B098F69A9A39DA07F0ECBEE034A544C9238CB1A31102146CF9FF884187094DA6E3D43F8381871F1880F94E0B8F886AD220DA1CDC79123AD5D4013E4181E56498863EE4C79B24A0DB7A4A43917E2D2311C65450A7C9A5950AE3A466870A9D1BDFDBA0E86D81E809E4A0D18CF39E94A1EDC8BC73469823EC347B29A8BE3472FBA10A0186BCBBA8AD30997709ADF1957EF11EE523546E00EC07865F944935A9381BC02A436133B601F989E0706E8919A8E1A3AF21AA55F659F6EBC7250EE9E36A53E408377734F582FD487F056103D46A5BB512BC1EFA57AFE8D57D1E1FB7173518D63208FB308B9138E772AA00C17384EABD903EA56EB1460AB53A50F2E7A3792D68A50E45F9795E9122C0D9AF832E985146B1B9EA19AD66F04406B098B8E512ACE695F30D10238E14356B11D0CA69B88AFCC23C04488EE993F8DAE847DF73D326E513D950CAAC271CB1A893A814C63F24924DC85B5324AFA31EEC803DD27320AD0CC060AA77F1342DEEEBA63EF7B7F774ACDDBA6E09E9B4F3CADA6FBF70E666375E903D224BC9BEFC52C5EFCF318AEA23155125AE6DB04E0E7DB60C177C17E298177C19EE99439F6A84E455D422077CE7C5884C9119F6925B6179EBF784AEE17374C035C5E6AA8AA4082793EE9F6B5EBF6C4595D7EC458D3FA1E5BB7D76F6147EE43FC367EEB1A0ED7A32C36007E743241F54F7A23FF62647A03C7289CCE57C3B2E7FE9C402B56E047AD141AE9BF139388B46B092DF980E8F0623B5B6B9B2E18A3CF65039DE7B715F06E40F3CFA3EDB46E3DD488BE7578990BA8F9E641703FED0FFA58D3848A5A32C32E1198303FAB14D610A7A195D78002BC4F49A1A97C85FA90F48833E991450FB9765F720FC1B0E5E249F6FCC0420999C95714A217FF8D46DF5843AB9F62E3CB26C4ABE8A39C89BFE0D5F25576D82E10FD15584144D88FD3E5B1D13B5F577505ED8937C592B3761</Value>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <Dependencies>
+          <Implicit />
+        </Dependencies>
+      </Properties>
+      <EngineSettings Macro="GitHub_Commit_1_0\GitHub Commit.yxmc" />
+    </Node>
+    <Node ToolID="20">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.TextInput.TextInput">
+        <Position x="522" y="318" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <NumRows value="1" />
+          <Fields>
+            <Field name="URL" />
+            <Field name="user" />
+            <Field name="repo" />
+            <Field name="filename" />
+            <Field name="directory" />
+          </Fields>
+          <Data>
+            <r>
+              <c>https://api.github.com</c>
+              <c>jpowellsdak25</c>
+              <c>github-commit-test</c>
+              <c>c:\temp\output.csv</c>
+              <c>test</c>
+            </r>
+          </Data>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxTextInput" />
+    </Node>
+    <Node ToolID="12">
+      <GuiSettings Plugin="AlteryxGuiToolkit.ToolContainer.ToolContainer">
+        <Position x="149" y="137" width="116" height="133" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Caption>R code</Caption>
+          <Style TextColor="#314c4a" FillColor="#ecf2f2" BorderColor="#314c4a" Transparency="25" Margin="25" />
+          <Disabled value="True" />
+          <Folded value="False" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <AnnotationText>R code</AnnotationText>
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <ChildNodes>
+        <Node ToolID="10">
+          <GuiSettings>
+            <Position x="174" y="186" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Value name="Text Box (8)">https://api.github.com/repos/apache/hop/issues?milestone=7&amp;state=closed&amp;page=1</Value>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+            <Dependencies>
+              <Implicit />
+            </Dependencies>
+          </Properties>
+          <EngineSettings Macro="Github downloader.yxmc" />
+        </Node>
+      </ChildNodes>
+    </Node>
+    <Node ToolID="13">
+      <GuiSettings Plugin="AlteryxGuiToolkit.ToolContainer.ToolContainer">
+        <Position x="65" y="313" width="277" height="149" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Caption><![CDATA[Download tool
+]]></Caption>
+          <Style TextColor="#314c4a" FillColor="#ecf2f2" BorderColor="#314c4a" Transparency="25" Margin="25" />
+          <Disabled value="True" />
+          <Folded value="False" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <AnnotationText><![CDATA[Download tool
+]]></AnnotationText>
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <ChildNodes>
+        <Node ToolID="7">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.TextInput.TextInput">
+            <Position x="90" y="378" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <NumRows value="1" />
+              <Fields>
+                <Field name="max" />
+                <Field name="URL" />
+                <Field name="Authorization" />
+                <Field name="Query" />
+                <Field name="Batch" />
+                <Field name="start_with" />
+              </Fields>
+              <Data>
+                <r>
+                  <c>1000</c>
+                  <c>https://api.github.com/repos/apache/hop/issues?milestone=7&amp;state=closed&amp;page=1</c>
+                  <c>Basic YTExMTExMTpwYXNzd29yZA==</c>
+                  <c>{"jql":"key=RPA-22229","startAt":0,"maxResults":1000,"fields":["aggregateprogress", "aggregatetimeestimate", "aggregatetimeoriginalestimate", "aggregatetimespent", "archivedby", "archiveddate", "assignee", "attachment", "comment", "components", "created...</c>
+                  <c>1</c>
+                  <c>0</c>
+                </r>
+              </Data>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxTextInput" />
+        </Node>
+        <Node ToolID="8">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+            <Position x="174" y="378" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <OrderChanged value="False" />
+              <CommaDecimal value="False" />
+              <SelectFields>
+                <SelectField field="start_with" selected="True" type="V_String" size="2147483647" />
+                <SelectField field="*Unknown" selected="True" />
+              </SelectFields>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+        </Node>
+        <Node ToolID="9">
+          <GuiSettings>
+            <Position x="258" y="378" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Value name="Check Box (67)">True</Value>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name>JIRA Batch Pull v3 (6)</Name>
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+            <Dependencies>
+              <Implicit />
+            </Dependencies>
+          </Properties>
+          <EngineSettings Macro="JIRA_Connector+8\JIRA Batch Pull v3.yxmc" />
+        </Node>
+      </ChildNodes>
+    </Node>
+  </Nodes>
+  <Connections>
+    <Connection>
+      <Origin ToolID="14" Connection="API Response" />
+      <Destination ToolID="18" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="20" Connection="Output" />
+      <Destination ToolID="19" Connection="Input5" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="7" Connection="Output" />
+      <Destination ToolID="8" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="8" Connection="Output" />
+      <Destination ToolID="9" Connection="Batches In" />
+    </Connection>
+  </Connections>
+  <Properties>
+    <Memory default="True" />
+    <GlobalRecordLimit value="0" />
+    <TempFiles default="True" />
+    <Annotation on="True" includeToolName="False" />
+    <ConvErrorLimit value="10" />
+    <ConvErrorLimit_Stop value="False" />
+    <CancelOnError value="False" />
+    <DisableBrowse value="False" />
+    <EnablePerformanceProfiling value="False" />
+    <RunWithE2 value="True" />
+    <DefaultTZ value="Local" />
+    <PredictiveToolsCodePage value="1252" />
+    <DisableAllOutput value="False" />
+    <ShowAllMacroMessages value="False" />
+    <ShowConnectionStatusIsOn value="True" />
+    <ShowConnectionStatusOnlyWhenRunning value="True" />
+    <ZoomLevel value="0" />
+    <LayoutType>Horizontal</LayoutType>
+    <IsTemplate value="False" />
+    <MetaInfo>
+      <NameIsFileName value="True" />
+      <Name>call_batch_github</Name>
+      <Description />
+      <RootToolName />
+      <ToolVersion />
+      <ToolInDb value="False" />
+      <CategoryName />
+      <SearchTags />
+      <Author />
+      <Company />
+      <Copyright />
+      <DescriptionLink actual="" displayed="" />
+      <Example>
+        <Description />
+        <File />
+      </Example>
+      <WorkflowId value="5f97a4e3-f099-48d5-82d8-b673aa479d90" />
+      <Telemetry>
+        <PreviousWorkflowId value="5cd06b47-c7da-4c7c-9f4b-f0fc288b843e" />
+        <OriginWorkflowId value="5cd06b47-c7da-4c7c-9f4b-f0fc288b843e" />
+      </Telemetry>
+      <PlatformWorkflowId value="" />
+    </MetaInfo>
+    <Events>
+      <Enabled value="True" />
+    </Events>
+  </Properties>
+</AlteryxDocument>
