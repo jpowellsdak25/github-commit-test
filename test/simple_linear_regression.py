@@ -4,6 +4,8 @@ from sklearn import datasets
 import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
+from ayx import Alteryx
+
 
 def simple_linear_regression():
     # Load the diabetes dataset
